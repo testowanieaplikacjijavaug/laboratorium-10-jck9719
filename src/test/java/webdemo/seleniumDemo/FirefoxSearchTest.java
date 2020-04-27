@@ -2,6 +2,7 @@ package webdemo.seleniumDemo;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.AfterAll;
@@ -41,12 +42,13 @@ class FirefoxSearchTest {
 
 	@Test
 	public void testFirstRes() {
-		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[2]/div[1]/div[1]/div/div[2]/input")).sendKeys("origenes");
-
+		driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input")).sendKeys("origenes");
 		driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[3]/center/input[1]")).click();
 		WebElement el = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div[1]/a/h3"));
-        assertNotNull(el.getText());
+		assertNotNull(el.getText());
 	}
+        
+        
 	
 	@Test
 	public void testThirdRes() {
