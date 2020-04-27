@@ -39,13 +39,13 @@ class FirefoxSearchTest {
 		driver.get("https://www.google.pl");
 	}
 
-	@Test
-	public void testFirstRes() {
-		driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input")).sendKeys("pope");
-		driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[3]/center/input[1]")).click();
-		WebElement el = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div[1]/a/h3"));
-        assertNotNull(el.getText());
-	}
+//	@Test
+//	public void testFirstRes() {
+//		driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input")).sendKeys("pope");
+//		driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[3]/center/input[1]")).click();
+//		WebElement el = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div[1]/a/h3"));
+//        assertNotNull(el.getText());
+//	}
 	
 	@Test
 	public void testThirdRes() {
