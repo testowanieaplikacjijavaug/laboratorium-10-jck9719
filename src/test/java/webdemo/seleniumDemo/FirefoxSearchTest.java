@@ -59,7 +59,7 @@ class FirefoxSearchTest {
 	
 	@Test
 	public void testNoClick() {
-		driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input")).sendKeys("origenes");
+		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[2]/div[1]/div[1]/div/div[2]/input")).sendKeys("origenes");
 		driver.findElement(By.cssSelector("#tsf > div:nth-child(2) > div.A8SBwf > div.FPdoLc.tfB0Bf > center > input.gNO89b")).sendKeys(Keys.RETURN);
 		WebElement el = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div[1]/a/h3"));
         assertNotNull(el.getText());
