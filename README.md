@@ -1,0 +1,1 @@
+Pobierz przykład z części teoretycznej i uruchom go poprzez przeglądarki w trybie headless. Następnie zautomatyzuj proces wrzucając przykład na reppozytorium, korzystająć z Github Actions lub TravisCI.
