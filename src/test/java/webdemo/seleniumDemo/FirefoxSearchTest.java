@@ -39,13 +39,14 @@ class FirefoxSearchTest {
 		driver.get("https://www.google.pl");
 	}
 
-//	@Test
-//	public void testFirstRes() {
-//		driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input")).sendKeys("pope");
-//		driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[3]/center/input[1]")).click();
-//		WebElement el = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div[1]/a/h3"));
-//        assertNotNull(el.getText());
-//	}
+	@Test
+	public void testFirstRes() {
+		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[2]/div[1]/div[1]/div/div[2]/input")).sendKeys("origenes");
+
+		driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[3]/center/input[1]")).click();
+		WebElement el = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div[1]/a/h3"));
+        assertNotNull(el.getText());
+	}
 	
 	@Test
 	public void testThirdRes() {
@@ -66,13 +67,9 @@ class FirefoxSearchTest {
 	
 	@Test
 	public void testCantLocate() {
-		try {
-            driver.findElement(By.xpath("origenes"))
-                    .sendKeys("devsinadivtorivmmevmintendedomineadadivvandummefestina");
-            fail();
-        } catch ( NoSuchElementException e ) {
-            assertTrue(true);
-        }
+		 assertThrows(NoSuchElementException.class, () -> {
+	            driver.findElement(By.linkText("No such element"));
+	        });
 		
 	}
 
